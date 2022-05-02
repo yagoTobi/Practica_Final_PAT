@@ -1,4 +1,5 @@
 package volta.cars.project.model;
+
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
