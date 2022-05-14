@@ -36,7 +36,6 @@
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -128,7 +127,7 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form">
+            <form action="https://formsubmit.co/4f2b01b6febc162e25cafead2aefd230" method="POST" class="php-email-form">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -138,6 +137,10 @@
                 <div class="col-md-6 ">
                   <input type="email" class="form-control" name="email" placeholder="Su correo" required>
                 </div>
+
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_autoresponse" value="Hemos recibido su correo, le contactaremos lo antes posible. - El equipo de Volta">
 
                 <div class="col-md-12">
                   <input type="text" class="form-control" name="subject" placeholder="Asunto" required>
@@ -149,8 +152,7 @@
 
                 <div class="col-md-12 text-center">
                   <div class="loading">Cargando...</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Su mensaje se ha enviado, gracias!</div>
+                  <div class="error-message">Su mensaje se ha enviado, gracias!</div>
 
                   <button type="submit">Envíe su mensaje</button>
                 </div>
