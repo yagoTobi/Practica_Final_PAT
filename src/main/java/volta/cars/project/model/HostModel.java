@@ -1,4 +1,5 @@
 package volta.cars.project.model;
+
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -9,12 +10,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table("VEHICLES")
-public class Vehicle {
+@Table("HOSTS")
+public class HostModel {
     private @Column("USER_ID") int userId;
+    private @Column("HOST_ID") int hostId;
     private @Column("VEHICLE_ID") int vehicleId;
-    private @Column("ELECTRIC") boolean isElectric;
-    private @Column("MODEL") String model;
-    private @Column("LICENSE_PLATE") String licensePlate;
-    private @Column("WATTAGE") float wattage;
+    private @Column("CHARGER_LOCATION") String location;
+    private @Column("HOURLY_RATE") float hourlyRate;
+    private @Column("RATING") int rating;
+    private @Column("NUMBER_HOSTED") int numberHosted;
+    private @Column("IDENTIFICATION") String identification;
 }

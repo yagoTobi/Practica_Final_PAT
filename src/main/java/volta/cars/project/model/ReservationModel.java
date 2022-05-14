@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table("RESERVATIONS")
-public class Reservation {
+public class ReservationModel {
     private @Column("USER_ID") String userId;
     private @Column("RESERVATION_ID") String reservationId;
     private @Column("HOST_ID") String hostId;

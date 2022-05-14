@@ -10,8 +10,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table("NEWSLETTER_MEMBERS")
-public class NewsletterMember {
+@Table("USERS")
+public class UserModel {
     private @Column("USER_ID") int userId;
-    private @Column("E_MAIL") String email;
+    private @Column("VEHICLE_ID") int vehicleId;
+    private @Column("AGE") int age;
+    private @Column("REGION") String region;
+    private @Column("IDENTIFICATION") String identification;
 }

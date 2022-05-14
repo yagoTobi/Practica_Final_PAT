@@ -10,11 +10,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table("USERS")
-public class User {
+@Table("CHARGERS")
+public class ChargerModel {
     private @Column("USER_ID") int userId;
-    private @Column("VEHICLE_ID") int vehicleId;
-    private @Column("AGE") int age;
-    private @Column("REGION") String region;
-    private @Column("IDENTIFICATION") String identification;
+    private @Column("CHARGER_ID") int chargerId;
+    private @Column("CHARGER_NAME") String chargerName;
+    private @Column("LATITUDE") float latitude;
+    private @Column("LONGITUDE") float longitude;
+    private @Column("WATTAGE") float wattage;
 }
