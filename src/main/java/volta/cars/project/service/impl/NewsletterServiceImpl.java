@@ -17,5 +17,14 @@ public class NewsletterServiceImpl implements NewsletterService{
     {
         return repository.findAll();
     }
+
+    @Override
+    public void createNewsletterMember(NewsletterModel newMember) {
+
+        String userEmail = newMember.getEmail();
+
+        repository.createNewsletterMember(userEmail);
+
+    }
     
 }

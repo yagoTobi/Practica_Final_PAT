@@ -10,10 +10,14 @@ import lombok.Data;
 @Data
 @Table("NEWSLETTER_MEMBERS")
 public class NewsletterModel {
+    
     @Column("USER_ID")
     private int userId;
+
     @Column("E_MAIL")
     private String email;
+
+
     public int getUserId() {
         return userId;
     }
