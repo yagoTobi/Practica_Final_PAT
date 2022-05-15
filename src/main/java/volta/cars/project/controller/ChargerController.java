@@ -1,10 +1,13 @@
 package volta.cars.project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,12 +23,21 @@ public class ChargerController {
     @Autowired
     private ChargerService service;
 
-
-
-    @GetMapping("/ChargerMembers")
+    @GetMapping("/chargerMembers")
     public ResponseEntity<Iterable<ChargerModel>> retrieveAll() {
         return ResponseEntity.ok().body(service.retrieveAll());
-    };
+    }
+    @PostMapping("/chargerMembers")
+    public ResponseEntity<String> createChargerMember(
+            @RequestBody ChargerModel model,
+            BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<String>("{\"result\" : \"KO\"}", HttpStatus.BAD_REQUEST);
+        } else {
+            service.createChargerMember(model);
+            return new ResponseEntity<String>("{\"result\" : \"OK\"}", HttpStatus.OK);
+        }
+    }
 
     @GetMapping("/charger")
     public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLon(@RequestParam(required=false) String longitude) {
@@ -33,17 +45,13 @@ public class ChargerController {
         Iterable<ChargerModel> response = service.retrieveChargerLong(longitude);
         return ResponseEntity.ok().body(response);
     }
-    /*@GetMapping("/charger")
-    public ResponseEntity<Iterable<Charger>> retrieveChargerLat(@RequestParam(required=false) String latitude) {
+    @GetMapping("/charger")
+    public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLat(@RequestParam(required=false) String latitude) {
 
-        Iterable<Charger> response = chargerService.retrieveChargerLat(latitude);
+        Iterable<ChargerModel> response = service.retrieveChargerLat(latitude);
         return ResponseEntity.ok().body(response);
     }
-    @PostMapping("/chargers")
-    public ResponseEntity<Charger> createCharger(@RequestBody Charger charger) {
-        Charger newCharger = chargerService.createCharger(charger);
-        return ResponseEntity.ok().body(newCharger);
-    }*/
+ 
 
     @GetMapping("/charger/{id}/")
     public ResponseEntity<ChargerModel> retrieveCharger(@PathVariable String id) {

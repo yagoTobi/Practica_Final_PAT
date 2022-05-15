@@ -65,5 +65,12 @@ public class ChargerServiceImpl implements ChargerService{
     public void deleteCharger(String id) {
         repository.deleteById(id);
     }
-    
+
+    @Override
+    public void createChargerMember(ChargerModel charger) {
+
+        String chargerId = charger.getId();
+        repository.createChargerMember(chargerId);
+
+    }
 }
