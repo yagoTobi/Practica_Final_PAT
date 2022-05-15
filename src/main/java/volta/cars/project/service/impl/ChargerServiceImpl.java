@@ -65,6 +65,4 @@ public class ChargerServiceImpl implements ChargerService{
     public void deleteCharger(String id) {
         repository.deleteById(id);
     }
-
-
 }

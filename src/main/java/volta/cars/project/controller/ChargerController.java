@@ -25,13 +25,13 @@ public class ChargerController {
         return ResponseEntity.ok().body(service.retrieveAll());
     }
 
-    @GetMapping("/charger")
+    @GetMapping("/chargerLon")
     public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLon(@RequestParam(required=false) String longitude) {
 
         Iterable<ChargerModel> response = service.retrieveChargerLong(longitude);
         return ResponseEntity.ok().body(response);
     }
-    @GetMapping("/charger")
+    @GetMapping("/chargerLat")
     public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLat(@RequestParam(required=false) String latitude) {
 
         Iterable<ChargerModel> response = service.retrieveChargerLat(latitude);
