@@ -13,5 +13,5 @@ public class UserDTO {
     String surname;
     String mail;
     String password;
-    int daybirth;
+    int birth;
 }

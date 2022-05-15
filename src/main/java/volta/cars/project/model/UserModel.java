@@ -13,10 +13,9 @@ import lombok.NoArgsConstructor;
 @Table("USERS")
 public class UserModel {
     private @Column("USER_ID") int userId;
-    private @Column("NAME") String name;
+    private @Column("USER_NAME") String name;
     private @Column("SURNAME") String surname;
-    private @Column("MAIL") String mail;
+    private @Column("E_MAIL") String mail;
     private @Column("PASS_WORD") String password;
-    private @Column("VEHICLE_ID") int vehicleId;
-    private @Column("DAY_BIRTH") int daybirth;
+    private @Column("BIRTH") int birth;
 }

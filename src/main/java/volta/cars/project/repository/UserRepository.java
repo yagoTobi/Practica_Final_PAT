@@ -10,6 +10,6 @@ public interface UserRepository extends CrudRepository<UserModel, String> {
 
     //Como hacer un Post 
     @Modifying
-    @Query("INSERT INTO User_MEMBERS (E_MAIL) VALUES (:email)")
+    @Query("INSERT INTO USERS (*) VALUES (:user)")
     public void addMember(UserModel user);
 }
