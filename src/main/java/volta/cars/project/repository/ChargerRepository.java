@@ -10,6 +10,10 @@ public interface ChargerRepository extends CrudRepository<ChargerModel, String> 
 
     //Como hacer un Post 
     @Modifying
-    @Query("INSERT INTO CHARGER_MEMBERS (E_MAIL) VALUES (:email)")
-    public void createChargerMember(String email);
+    @Query("SELECT * FROM CHARGER WHERE CHARGER.LONGITUDE= :longitude")
+    public Iterable<ChargerModel> retrieveChargersByLongitude(float longitude);
+    @Query("SELECT * FROM CHARGER WHERE CHARGER.LONGITUDE= :longitude")
+    public Iterable<ChargerModel> retrieveChargersByLatitude(float latitude);
+    @Query("SELECT * FROM CHARGER WHERE CHARGER.ID= :id")
+    public Iterable<ChargerModel> retrieveCharger(String chargerId);
 }

@@ -4,5 +4,9 @@ import volta.cars.project.model.ChargerModel;
 
 public interface ChargerService {
     Iterable<ChargerModel> retrieveAll();
-    void createChargerMember(ChargerModel newMember);
+    Iterable<ChargerModel> retrieveChargerLat(String latitude);
+    Iterable<ChargerModel> retrieveChargerLong(String longitude);
+    ChargerModel retrieveCharger(String id);
+    ChargerModel updateCharger(String id, ChargerModel charger);
+    void deleteCharger(String id);
 }
