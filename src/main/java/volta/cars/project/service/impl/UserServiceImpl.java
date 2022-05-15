@@ -1,6 +1,7 @@
 package volta.cars.project.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import volta.cars.project.model.UserModel;
@@ -21,7 +22,13 @@ public class UserServiceImpl implements UserService{
     @Override
     public void createUserMember(UserModel newMember) {
 
-        repository.addMember(newMember);
+        String user_name = newMember.getUser_name();
+        String surname = newMember.getSurname();
+        String email = newMember.getEmail();
+        String password = newMember.getPassword();
+        String dob = newMember.getDob();
+
+        repository.addMember(user_name, surname, email, password, dob);
 
     }
     

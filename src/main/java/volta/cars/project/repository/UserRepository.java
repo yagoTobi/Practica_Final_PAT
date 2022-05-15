@@ -10,6 +10,7 @@ public interface UserRepository extends CrudRepository<UserModel, String> {
 
     //Como hacer un Post 
     @Modifying
-    @Query("INSERT INTO USERS (*) VALUES (:user)")
-    public void addMember(UserModel user);
+    @Query("INSERT INTO USERS (USER_NAME, SURNAME, E_MAIL, PASSWORD, DOB) VALUES (:user_name, :surname, :email,:password, :dob)")
+    public void addMember(String user_name, String surname, String email, String password, String dob);
+
 }
