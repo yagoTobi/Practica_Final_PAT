@@ -18,12 +18,47 @@ public class ChargerModel {
     private @Column("LATITUDE") float latitude;
     private @Column("LONGITUDE") float longitude;
     private @Column("WATTAGE") float wattage;
-    public String getId() {
-        return chargerId;
+
+    public String getChargerId() {
+        return this.chargerId;
     }
-    public void setId(String chargerId) {
+
+    public void setChargerId(String chargerId) {
         this.chargerId = chargerId;
     }
+
+    public String getChargerName() {
+        return this.chargerName;
+    }
+
+    public void setChargerName(String chargerName) {
+        this.chargerName = chargerName;
+    }
+
+    public float getLatitude() {
+        return this.latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    public float getLongitude() {
+        return this.longitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
+    }
+
+    public float getWattage() {
+        return this.wattage;
+    }
+
+    public void setWattage(float wattage) {
+        this.wattage = wattage;
+    }
+  
     public int getUserId() {
         return userId;
     }
