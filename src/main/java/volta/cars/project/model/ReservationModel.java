@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table("RESERVATIONS")
 public class ReservationModel {
-    private @Column("USER_ID") String userId;
+    private @Column("USER_ID") int userId;
     private @Column("RESERVATION_ID") String reservationId;
     private @Column("HOST_ID") String hostId;
     private @Column("PRICE") float price;
@@ -20,11 +20,11 @@ public class ReservationModel {
     private @Column("RESERVATION_DATE") String reservationDate;
     private @Column("RESERVATION_HOUR") String reservationHour;
 
-    public String getUserId() {
+    public int getUserId() {
         return this.userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
