@@ -11,5 +11,5 @@ public interface VehicleRepository extends CrudRepository<VehicleModel, String> 
     //Como hacer un Post 
     @Modifying
     @Query("INSERT INTO VEHICLES (ELECTRIC, MODEL, LICENSE_PLATE, WATTAGE) VALUES (:email)")
-    public void createVehicleMember(boolean isElectric, String model, String licesePlate, float wattage);
+    public void createVehicleMember(boolean isElectric, String model, String licensePlate, float wattage);
 }
