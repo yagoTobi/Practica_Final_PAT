@@ -19,8 +19,6 @@ public class UserController {
     @Autowired
     private UserService service;
 
-
-
     @GetMapping("/userMembers")
     public ResponseEntity<Iterable<UserModel>> retrieveAll() {
         return ResponseEntity.ok().body(service.retrieveAll());
