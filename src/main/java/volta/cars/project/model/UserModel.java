@@ -11,17 +11,14 @@ import lombok.Data;
 public class UserModel {
 
     private @Column("USER_ID") int userId;
-<<<<<<< HEAD
+
     public int getUserId() {
         return userId;
     }
     public void setUserId(int userId) {
         this.userId = userId;
     }
-    private @Column("USER_NAME") String name;
-=======
     private @Column("USER_NAME") String user_name;
->>>>>>> 1d345e92668c861998922e36ff6d4397081bfd37
     private @Column("SURNAME") String surname;
     private @Column("E_MAIL") String email;
     private @Column("PASSWORD") String password;
