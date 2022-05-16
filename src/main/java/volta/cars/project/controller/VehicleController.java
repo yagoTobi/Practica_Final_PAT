@@ -19,12 +19,12 @@ public class VehicleController {
     @Autowired
     private VehicleService service;
 
-    @GetMapping("/VehicleMembers")
+    @GetMapping("/vehicles")
     public ResponseEntity<Iterable<VehicleModel>> retrieveAll() {
         return ResponseEntity.ok().body(service.retrieveAll());
     };
 
-    @PostMapping("/VehicleMembers")
+    @PostMapping("/vehicles")
     public ResponseEntity<String> createVehicleMember(
             @RequestBody VehicleModel model,
             BindingResult bindingResult) {
