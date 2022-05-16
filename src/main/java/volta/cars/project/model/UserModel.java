@@ -13,6 +13,12 @@ import lombok.NoArgsConstructor;
 @Table("USERS")
 public class UserModel {
     private @Column("USER_ID") int userId;
+    public int getUserId() {
+        return userId;
+    }
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
     private @Column("USER_NAME") String name;
     private @Column("SURNAME") String surname;
     private @Column("E_MAIL") String mail;

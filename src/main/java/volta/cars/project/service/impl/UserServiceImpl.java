@@ -21,7 +21,9 @@ public class UserServiceImpl implements UserService{
     @Override
     public void createUserMember(UserModel newMember) {
 
-        repository.addMember(newMember);
+        int userId= newMember.getUserId();
+
+        repository.createUserMember(userId);
 
     }
     
