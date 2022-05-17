@@ -11,7 +11,6 @@ public class HostDTO {
     int userId;
     int hostId;
     int vehicleId;
-    String location;
     float hourlyRate;
     int rating;
     int numberHosted;

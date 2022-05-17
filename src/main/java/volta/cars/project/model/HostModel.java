@@ -15,7 +15,6 @@ public class HostModel {
     private @Column("USER_ID") int userId;
     private @Column("HOST_ID") int hostId;
     private @Column("VEHICLE_ID") int vehicleId;
-    private @Column("CHARGER_LOCATION") String location;
     private @Column("HOURLY_RATE") float hourlyRate;
     private @Column("RATING") int rating;
     private @Column("NUMBER_HOSTED") int numberHosted;
@@ -43,14 +42,6 @@ public class HostModel {
 
     public void setVehicleId(int vehicleId) {
         this.vehicleId = vehicleId;
-    }
-
-    public String getLocation() {
-        return this.location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public float getHourlyRate() {
