@@ -11,6 +11,11 @@ import lombok.Data;
 public class UserModel {
 
     private @Column("USER_ID") int userId;
+    private @Column("USER_NAME") String userName;
+    private @Column("SURNAME") String surname;
+    private @Column("E_MAIL") String email;
+    private @Column("PASSWORD") String password;
+    private @Column("DOB") String dob;
 
     public int getUserId() {
         return userId;
@@ -18,19 +23,15 @@ public class UserModel {
     public void setUserId(int userId) {
         this.userId = userId;
     }
-    private @Column("USER_NAME") String user_name;
-    private @Column("SURNAME") String surname;
-    private @Column("E_MAIL") String email;
-    private @Column("PASSWORD") String password;
-    private @Column("DOB") String dob;
-
     
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return this.userName;
     }
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
+
     public String getSurname() {
         return surname;
     }

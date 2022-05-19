@@ -23,22 +23,19 @@ public class UserServiceImpl implements UserService{
     @Override
     public void createUserMember(UserModel newMember) {
 
-        String user_name = newMember.getUser_name();
+        String userName = newMember.getUserName();
         String surname = newMember.getSurname();
         String email = newMember.getEmail();
         String password = newMember.getPassword();
         String dob = newMember.getDob();
 
-        repository.addMember(user_name, surname, email, password, dob);
+        repository.addMember(userName, surname, email, password, dob);
 
     }
 
     @Override
     public Optional<UserModel> getUserByEmail(String email) {
         return repository.findById(email);
-
-        // Una alternativa sin tener que crear este metodo y solo usando crud sería:
-        // return userRepository.findById(userId).get();
     }
     
 }
