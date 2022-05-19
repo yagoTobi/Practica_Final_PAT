@@ -22,13 +22,12 @@ public class HostServiceImpl implements HostService{
     public void createHostMember(HostModel newHost) {
 
         int userId=newHost.getUserId();
-        int vehicleId=newHost.getVehicleId();
         float hourlyRate=newHost.getHourlyRate();
         int rating=newHost.getRating();
         int numberHosted=newHost.getNumberHosted();
         String identification=newHost.getIdentification();
 
-        repository.addHost(userId, vehicleId, hourlyRate,rating, numberHosted,identification);
+        repository.addHost( userId, hourlyRate, rating, numberHosted, identification);
 
     }
     

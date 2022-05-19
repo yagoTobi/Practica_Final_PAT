@@ -10,8 +10,8 @@ public interface HostRepository extends CrudRepository<HostModel, String> {
 
     //Como hacer un Post 
     @Modifying
-    @Query("INSERT INTO HOSTS (USER_IDE, VEHICLE_ID, HOURLY_RATE,RATING, NUMBER_HOSTED, IDENTIFICATION) VALUES (:userId, :vehicleId, :hourlyRate, :rating, :numberHosted, :identification)")
-    public void addHost(int userId, int vehicleId, float hourlyRate, int rating, int numberHosted, String identification);
+    @Query("INSERT INTO HOSTS (USER_IDE, HOURLY_RATE,RATING, NUMBER_HOSTED, IDENTIFICATION) VALUES (:userId, :vehicleId, :hourlyRate, :rating, :numberHosted, :identification)")
+    public void addHost(int userId, float hourlyRate, int rating, int numberHosted, String identification);
 
 
 }

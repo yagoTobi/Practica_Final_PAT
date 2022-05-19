@@ -1,10 +1,13 @@
 package volta.cars.project.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,5 +37,10 @@ public class UserController {
             service.createUserMember(model);
             return new ResponseEntity<String>("{\"result\" : \"OK\"}", HttpStatus.OK);
         }
+    }
+
+    @GetMapping("/userMembers/{email}")
+    public Optional<UserModel> getUser(@PathVariable("email") String email) {
+        return service.getUserByEmail(email);
     }
 }

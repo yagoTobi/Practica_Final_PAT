@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 public class HostModel {
     private @Column("USER_ID") int userId;
     private @Column("HOST_ID") int hostId;
-    private @Column("VEHICLE_ID") int vehicleId;
     private @Column("HOURLY_RATE") float hourlyRate;
     private @Column("RATING") int rating;
     private @Column("NUMBER_HOSTED") int numberHosted;
@@ -34,14 +33,6 @@ public class HostModel {
 
     public void setHostId(int hostId) {
         this.hostId = hostId;
-    }
-
-    public int getVehicleId() {
-        return this.vehicleId;
-    }
-
-    public void setVehicleId(int vehicleId) {
-        this.vehicleId = vehicleId;
     }
 
     public float getHourlyRate() {

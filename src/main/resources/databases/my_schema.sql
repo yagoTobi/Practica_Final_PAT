@@ -18,7 +18,6 @@ CREATE TABLE "USERS" (
 CREATE TABLE "HOSTS" (
     "USER_ID" INTEGER NOT NULL, 
     "HOST_ID" INTEGER IDENTITY NOT NULL PRIMARY KEY,
-    "VEHICLE_ID" INTEGER, --Puede llegar a tener cargador pero no coche 
     "HOURLY_RATE" FLOAT NOT NULL, --Cuanto cobra por hora el uso de cargador
     "RATING" INTEGER, --Añade estrellas (/5)
     "NUMBER_HOSTED" INTEGER, --Cuantos usuarios ha alojado en su cargador

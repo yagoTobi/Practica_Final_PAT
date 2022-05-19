@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 public class HostDTO {
     int userId;
     int hostId;
-    int vehicleId;
     float hourlyRate;
     int rating;
     int numberHosted;

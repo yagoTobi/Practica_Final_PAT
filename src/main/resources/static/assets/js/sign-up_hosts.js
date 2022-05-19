@@ -27,29 +27,49 @@ submit_button.addEventListener("click",
         }
         else 
         {
-            //Falta un if para que la contraseña sea la misma que en el usuario con el correo
-            let request = await fetch("/api/v1/hostMembers", {
+            const url="/api/v1/userMembers/";
+            url.push(e_mail)
+            let request1 = await fetch(url, {
+                method: 'GET',
+                credentials: "same-origin", 
+                headers: {
+                    "Content-Type":"application/json"
+                }, 
+                body: JSON.stringify({
+                    user_name: user_name,
+                    surname: surname, 
+                    e_mail: e_mail,
+                    password: password, 
+                    dob:dob
+                }), dataType:"json"
+            })
+
+            console.log(await request1.json());
+
+            if(request1.ok)
+            {
+            let request2 = await fetch("/api/v1/hostMembers", {
                 method: 'POST',
                 credentials: "same-origin", 
                 headers: {
                     "Content-Type":"application/json"
                 }, 
                 body: JSON.stringify({
-                    user_id: , //Esto tiene que heredarlo con un join de usuarios
-                    surname: surname, 
-                    vehicle_id: ,//Esto tiene que heredarlo con un join de vehiculos
+                    user_id: request1.e_mail,
+                    host_id: host_id, 
                     hourly_rate: hourly_rate, 
-                    rating:rating, 
+                    rating: rating, 
                     number_hosted: number_hosted, 
-                    identification:identification
+                    identification: identification
                 }), dataType:"json"
             })
 
-            if(request.ok)
+            if(request2.ok)
             {
                 console.log("Success!");
-                console.log(await request.json());
+                console.log(await request2.json());
             }
+        }
         }
 
     }))

@@ -1,5 +1,7 @@
 package volta.cars.project.service.impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,14 @@ public class UserServiceImpl implements UserService{
 
         repository.addMember(user_name, surname, email, password, dob);
 
+    }
+
+    @Override
+    public Optional<UserModel> getUserByEmail(String email) {
+        return repository.findById(email);
+
+        // Una alternativa sin tener que crear este metodo y solo usando crud sería:
+        // return userRepository.findById(userId).get();
     }
     
 }
