@@ -35,4 +35,5 @@ public class HostController {
             return new ResponseEntity<String>("{\"result\" : \"OK\"}", HttpStatus.OK);
         }
     }
+
 }

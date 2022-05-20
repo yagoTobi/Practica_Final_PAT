@@ -1,7 +1,7 @@
 let submit_button = document.getElementById("submit_button");
 
 submit_button.addEventListener("click",
-    (postNewUser = async () => {
+    (postNewHost = async () => {
         let email = document.getElementById("e_mail").value;
         let password = document.getElementById("password").value;
 
@@ -20,17 +20,15 @@ submit_button.addEventListener("click",
 
             if (request1.ok) {
                 data = await request1.json();
-                document.getElementById("result").innerHTML = "";
 
-                console.log(data);
-            }
+                console.log(data[0].email);
+                console.log(email);
+                console.log(data[0].password);
+                console.log(password);
 
-            if (request1.ok) {
-                if (data.email == email && data.password == password) {
-                    let url = "http://localhost:" + Integer.toString(port) + "/hosts.html";
-                    window.location = url;
-
-                    /* */
+                if (data[0].email == email && data[0].password == password) {
+                    let url = "/hosts.html";
+                    window.location.href = url;
                 }
             }
         }
