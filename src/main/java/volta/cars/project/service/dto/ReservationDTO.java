@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReservationDTO {
-    String userId;
+    Long userId;
     String reservationId;
     String hostId;
     float price;

@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class HostDTO {
-    int userId;
-    int hostId;
+    Long userId;
+    Long hostId;
     float hourlyRate;
     int rating;
     int numberHosted;

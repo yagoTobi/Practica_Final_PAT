@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserChargerDTO {
-    int userId;
-    int vehicleId;
+    Long userId;
+    Long vehicleId;
     int age; 
     String region; 
     String identification;
-    int chargerId; 
+    Long chargerId; 
     String chargerName;
     float latitude; 
     float longitude;

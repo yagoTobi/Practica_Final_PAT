@@ -28,4 +28,9 @@ public class HostServiceImpl implements HostService{
         repository.addHost(userId, hourlyRate, numberHosted, identification);
         
     }
+
+    @Override
+    public Iterable<HostModel> getHostById(Long userId) {
+        return repository.getHostById(userId);
+    }
 }

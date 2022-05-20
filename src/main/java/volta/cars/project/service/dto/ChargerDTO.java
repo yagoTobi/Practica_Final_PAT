@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ChargerDTO {
-    int userId;
-    int chargerId;
+    Long userId;
+    Long chargerId;
     String chargerName;
     float latitude;
     float longitude;

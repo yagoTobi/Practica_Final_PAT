@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class NewsletterDTO {
-    int userId;
+    Long userId;
     String email;
 }

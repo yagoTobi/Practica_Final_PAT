@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class VehicleDTO {
-    int userId;
-    int vehicleId;
+    Long userId;
+    Long vehicleId;
     boolean isElectric;
     String model;
     String licensePlate;
