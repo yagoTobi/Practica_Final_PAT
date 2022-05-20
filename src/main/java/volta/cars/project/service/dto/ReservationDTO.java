@@ -12,7 +12,8 @@ public class ReservationDTO {
     String reservationId;
     String hostId;
     float price;
-    String location;
+    String latitude;
+    String longitude;
     String reservationDate;
     String reservationHour;
 }
