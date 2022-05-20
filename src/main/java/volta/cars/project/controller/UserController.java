@@ -20,8 +20,6 @@ import volta.cars.project.service.UserService;
 @RequestMapping("/api/v1")
 public class UserController {
 
-    
-
     @Autowired
     private UserService service;
 
@@ -31,18 +29,14 @@ public class UserController {
     };
 
     @PostMapping("/userMembers")
-    public ResponseEntity<String> createUserMember(
+    public ResponseEntity<UserModel> createUserMember(
             @RequestBody UserModel model,
             BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return new ResponseEntity<String>("{\"result\" : \"KO\"}", HttpStatus.BAD_REQUEST);
-        } else {
-            service.createUserMember(model);
-            return new ResponseEntity<String>("{\"result\" : \"OK\"}", HttpStatus.OK);
-        }
+        service.createUserMember(model);
+        return ResponseEntity.ok().body(model);
     }
 
-    //TODO Verificar el error del correo 
+    // TODO Verificar el error del correo
     @GetMapping("/userMembers/{email}")
     public Iterable<UserModel> getUser(@PathVariable("email") String email) {
         return service.getUserByEmail(email);
