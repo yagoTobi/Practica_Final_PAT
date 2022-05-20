@@ -31,11 +31,8 @@ async function getChargers() {
                 marcador.setLatLng([latitude, longitude]);
                 marcador.bindPopup('<h3>Tipo de cargador:</h3><h4>' + chargerType + '</h4><div class="row d-flex justify-content-center"><button class="btn btn-dark btn-lg btn-block" id= "reservation_button' + i + '" type="button">Reservar</button></div>').openPopup();
             }
-
             getCharger();
         }
-
-
 
         for (let i = 1; i-1 < data.length; i++) {
             var reservation_button=document.getElementById("reservation_button" + i);
