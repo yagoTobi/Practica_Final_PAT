@@ -11,26 +11,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table("VEHICLES")
 public class VehicleModel {
-    private @Column("USER_ID") int userId;
-    private @Column("VEHICLE_ID") int vehicleId;
+    private @Column("USER_ID") Long userId;
+    private @Column("VEHICLE_ID") Long vehicleId;
     private @Column("ELECTRIC") boolean isElectric;
     private @Column("MODEL") String model;
     private @Column("LICENSE_PLATE") String licensePlate;
     private @Column("WATTAGE") float wattage;
 
-    public int getUserId() {
+    public Long getUserId() {
         return this.userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public int getVehicleId() {
+    public Long getVehicleId() {
         return this.vehicleId;
     }
 
-    public void setVehicleId(int vehicleId) {
+    public void setVehicleId(Long vehicleId) {
         this.vehicleId = vehicleId;
     }
 
@@ -69,4 +69,5 @@ public class VehicleModel {
     public void setWattage(float wattage) {
         this.wattage = wattage;
     }
+
 }

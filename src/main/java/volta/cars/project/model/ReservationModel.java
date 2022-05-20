@@ -12,36 +12,36 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table("RESERVATIONS")
 public class ReservationModel {
-    private @Column("USER_ID") int userId;
-    private @Column("RESERVATION_ID") int reservationId;
-    private @Column("HOST_ID") int hostId;
+    private @Column("USER_ID") Long userId;
+    private @Column("RESERVATION_ID") Long reservationId;
+    private @Column("HOST_ID") Long hostId;
     private @Column("PRICE") float price;
     private @Column("LATITUDE") float latitude;
     private @Column("LONGITUDE") float longitude;
     private @Column("RESERVATION_DATE") String reservationDate;
     private @Column("RESERVATION_HOUR") String reservationHour;  
 
-    public int getUserId() {
+    public Long getUserId() {
         return this.userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public int getReservationId() {
+    public Long getReservationId() {
         return this.reservationId;
     }
 
-    public void setReservationId(int reservationId) {
+    public void setReservationId(Long reservationId) {
         this.reservationId = reservationId;
     }
 
-    public int getHostId() {
+    public Long getHostId() {
         return this.hostId;
     }
 
-    public void setHostId(int hostId) {
+    public void setHostId(Long hostId) {
         this.hostId = hostId;
     }
 
@@ -84,4 +84,5 @@ public class ReservationModel {
     public void setReservationHour(String reservationHour) {
         this.reservationHour = reservationHour;
     }
+    
 }
