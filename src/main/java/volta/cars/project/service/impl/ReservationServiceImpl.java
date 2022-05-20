@@ -21,8 +21,8 @@ public class ReservationServiceImpl implements ReservationService{
     @Override
     public void createReservation(ReservationModel newReservation) {
 
-        int userId = newReservation.getUserId();
-        int hostId = newReservation.getHostId();
+        Long userId = newReservation.getUserId();
+        Long hostId = newReservation.getHostId();
         float price = newReservation.getPrice();
         float latitude = newReservation.getLatitude();
         float longitude = newReservation.getLongitude();
