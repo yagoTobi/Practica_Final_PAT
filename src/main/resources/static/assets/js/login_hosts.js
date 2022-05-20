@@ -29,6 +29,8 @@ submit_button.addEventListener("click",
                 if (data.email == email && data.password == password) {
                     let url = "http://localhost:" + Integer.toString(port) + "/hosts.html";
                     window.location = url;
+
+                    /* */
                 }
             }
         }

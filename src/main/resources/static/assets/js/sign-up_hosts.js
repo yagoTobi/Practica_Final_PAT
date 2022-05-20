@@ -37,6 +37,8 @@ submit_button.addEventListener("click",
             }
 
             if (request1.ok) {
+
+                //Comprobar que la contraseña sea igual que la del userId
                 let request2 = await fetch("/api/v1/hostMembers", {
                     method: 'POST',
                     credentials: "same-origin",
