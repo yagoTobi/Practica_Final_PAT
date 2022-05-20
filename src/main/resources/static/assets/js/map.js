@@ -97,65 +97,9 @@ async function getChargers() {
                 console.log(await request.json());
               }
             }
-<<<<<<< HEAD
           }
         })
       );
-=======
-            getCharger();
-            var reservation_button=document.getElementById("reservation_button" + i);
-            console.log(reservation_button);
-            reservation_button.addEventListener("click",
-                (postNewReservation = async () => {
-
-                    const now = new Date();
-                    const reservationHour = now.getHours() + ':' + now.getMinutes();
-                    const reservationDate = now.getDate();
-                    let request2 = await fetch("/api/v1/charger/"+i, {
-                        method: "GET",
-                    }).catch(console.error);
-
-                    if (request2.ok) {
-                        data2 = await request.json();
-                        console.log(data);
-
-                        let request1 = await fetch("/api/v1//hostMembers/" + data2[0].userId, {
-                            method: "GET",
-                        }).catch(console.error);
-
-                        if (request1.ok) {
-                            data1 = await request1.json();
-
-                            let request = await fetch("/api/v1/reservations", {
-                                method: 'POST',
-                                credentials: "same-origin",
-                                headers: {
-                                    "Content-Type": "application/json"
-                                },
-                                body: JSON.stringify({
-                                    userId: data2[0].userId,
-                                    hostId: data1[0].hostId,
-                                    price: data1[0].hourlyrate,
-                                    latitude: data2[0].latitude,
-                                    longitude: data2[0].longitude,
-                                    reservationDate: reservationDate,
-                                    reservationHour: reservationHour
-                                }), dataType: "json"
-                            })
-
-                            console.log(userName);
-
-                            if (request.ok) {
-                                console.log("Success!");
-                                console.log(await request.json());
-                            }
-                        }
-                    }
-                }
-                )
-            )
-        }
->>>>>>> 35c429c17a58df7ffe652bc7f2f295c126cdffdb
     }
   }
 }
