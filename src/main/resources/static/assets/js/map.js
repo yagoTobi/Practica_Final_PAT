@@ -5,7 +5,10 @@ const pcIcon = L.icon({
     iconSize: [10, 8],
     iconAnchor: [6, 4]
 });
-
+const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const tiles = L.tileLayer(tileUrl, { attribution });
+tiles.addTo(map);
 let request = await fetch("/api/v1/chargers", {
     method: "GET",
 }).catch(console.error);
@@ -17,12 +20,7 @@ if (request.ok) {
 
         const marcador = L.marker([0, 0], { icon: pcIcon }).addTo(map);
 
-        const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-        const tiles = L.tileLayer(tileUrl, { attribution });
-        tiles.addTo(map);
-
-        async function getIp() {
+        async function getCharger() {
 
             const latitude = data[i].latitude;
             const longitude = data[i].longitude;
@@ -32,6 +30,8 @@ if (request.ok) {
 
         }
 
+        getCharger();
+        setInterval(getCharger, 2000)
     }
 
 }
