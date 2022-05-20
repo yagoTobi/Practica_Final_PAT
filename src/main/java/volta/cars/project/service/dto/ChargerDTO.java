@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ChargerDTO {
     int userId;
-    String chargerId;
+    int chargerId;
     String chargerName;
     float latitude;
     float longitude;

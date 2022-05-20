@@ -1,7 +1,9 @@
 package volta.cars.project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,24 +23,36 @@ public class ChargerController {
     @Autowired
     private ChargerService service;
 
-    @GetMapping("/chargerMembers")
+    @GetMapping("/chargers")
     public ResponseEntity<Iterable<ChargerModel>> retrieveAll() {
         return ResponseEntity.ok().body(service.retrieveAll());
+    };
+
+    @PostMapping("/chargers")
+    public ResponseEntity<String> createCharger(
+            @RequestBody ChargerModel model,
+            BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<String>("{\"result\" : \"KO\"}", HttpStatus.BAD_REQUEST);
+        } else {
+            service.createCharger(model);
+            return new ResponseEntity<String>("{\"result\" : \"OK\"}", HttpStatus.OK);
+        }
     }
 
     @GetMapping("/chargerLon")
-    public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLon(@RequestParam(required=false) String longitude) {
+    public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLon(@RequestParam(required = false) String longitude) {
 
         Iterable<ChargerModel> response = service.retrieveChargerLong(longitude);
         return ResponseEntity.ok().body(response);
     }
+
     @GetMapping("/chargerLat")
-    public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLat(@RequestParam(required=false) String latitude) {
+    public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLat(@RequestParam(required = false) String latitude) {
 
         Iterable<ChargerModel> response = service.retrieveChargerLat(latitude);
         return ResponseEntity.ok().body(response);
     }
- 
 
     @GetMapping("/charger/{id}/")
     public ResponseEntity<ChargerModel> retrieveCharger(@PathVariable String id) {
@@ -59,12 +73,5 @@ public class ChargerController {
     public ResponseEntity<ChargerModel> deleteCharger(@PathVariable String id) {
         service.deleteCharger(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @PostMapping("/users")
-    public ResponseEntity<ChargerModel> create(@RequestBody ChargerModel newCharger) {
-        service.createCharger(newCharger);
-
-        return ResponseEntity.ok().body(newCharger);
     }
 }

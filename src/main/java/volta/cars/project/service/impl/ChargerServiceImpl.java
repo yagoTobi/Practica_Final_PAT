@@ -42,7 +42,8 @@ public class ChargerServiceImpl implements ChargerService {
     public ChargerModel retrieveCharger(String id) {
         ChargerModel response = null;
         if (repository.existsById(id)) {
-            Iterable<ChargerModel> chargers = repository.retrieveCharger(id);
+            int idInt = Integer.parseInt(id);
+            Iterable<ChargerModel> chargers = repository.retrieveCharger(idInt);
             for (ChargerModel charger : chargers) {
                 response = charger;
             }
@@ -74,7 +75,7 @@ public class ChargerServiceImpl implements ChargerService {
         float longitude = newCharger.getLongitude();
         float wattage = newCharger.getWattage();
 
-        repository.createCharger(userId, chargerName, latitude, longitude, wattage);
+        repository.addCharger(userId, chargerName, latitude, longitude, wattage);
 
     }
 }

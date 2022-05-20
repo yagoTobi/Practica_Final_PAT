@@ -13,17 +13,17 @@ import lombok.NoArgsConstructor;
 @Table("CHARGERS")
 public class ChargerModel {
     private @Column("USER_ID") int userId;
-    private @Column("CHARGER_ID") String chargerId;
+    private @Column("CHARGER_ID") int chargerId;
     private @Column("CHARGER_NAME") String chargerName;
     private @Column("LATITUDE") float latitude;
     private @Column("LONGITUDE") float longitude;
     private @Column("WATTAGE") float wattage;
 
-    public String getChargerId() {
+    public int getChargerId() {
         return this.chargerId;
     }
 
-    public void setChargerId(String chargerId) {
+    public void setChargerId(int chargerId) {
         this.chargerId = chargerId;
     }
 
@@ -58,10 +58,11 @@ public class ChargerModel {
     public void setWattage(float wattage) {
         this.wattage = wattage;
     }
-  
+
     public int getUserId() {
         return userId;
     }
+
     public void setUserId(int userId) {
         this.userId = userId;
     }
