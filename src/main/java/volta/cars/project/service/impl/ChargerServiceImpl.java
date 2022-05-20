@@ -19,27 +19,31 @@ public class ChargerServiceImpl implements ChargerService {
     }
 
     @Override
-    public Iterable<ChargerModel> retrieveChargerLat(String latitude) {
-        if (latitude == null) {
-            return repository.findAll();
-        } else {
-            float latitudeFloat = Float.parseFloat(latitude);
-            return repository.retrieveChargersByLatitude(latitudeFloat);
-        }
+    public Iterable<ChargerModel> retrieveChargerLat(float latitude) {
+
+            return repository.retrieveChargersByLatitude(latitude);
     }
 
     @Override
-    public Iterable<ChargerModel> retrieveChargerLong(String longitude) {
-        if (longitude == null) {
-            return repository.findAll();
-        } else {
-            float longitudeFloat = Float.parseFloat(longitude);
-            return repository.retrieveChargersByLongitude(longitudeFloat);
-        }
+    public Iterable<ChargerModel> retrieveChargerLong(float longitude) {
+
+            return repository.retrieveChargersByLongitude(longitude);
+    }
+
+
+    @Override
+    public void createCharger(ChargerModel newCharger) {
+
+        Long userId = newCharger.getUserId();
+        float latitude = newCharger.getLatitude();
+        float longitude = newCharger.getLongitude();
+        String chargerType = newCharger.getChargerType();
+
+        repository.addCharger(userId, latitude, longitude, chargerType);
     }
 
     @Override
-    public ChargerModel retrieveCharger(String id) {
+    public ChargerModel retrieveCharger(Long id) {
         ChargerModel response = null;
         if (repository.existsById(id)) {
             int idInt = Integer.parseInt(id);
@@ -66,14 +70,5 @@ public class ChargerServiceImpl implements ChargerService {
         repository.deleteById(id);
     }
 
-    @Override
-    public void createCharger(ChargerModel newCharger) {
 
-        Long userId = newCharger.getUserId();
-        float latitude = newCharger.getLatitude();
-        float longitude = newCharger.getLongitude();
-        String chargerType = newCharger.getChargerType();
-
-        repository.addCharger(userId, latitude, longitude, chargerType);
-    }
 }

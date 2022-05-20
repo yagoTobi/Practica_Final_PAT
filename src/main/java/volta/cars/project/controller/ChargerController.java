@@ -42,27 +42,27 @@ public class ChargerController {
     }
 
     @GetMapping("/chargerLon")
-    public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLon(@RequestParam(required = false) String longitude) {
+    public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLon(@RequestParam(required = false) float longitude) {
 
         Iterable<ChargerModel> response = service.retrieveChargerLong(longitude);
         return ResponseEntity.ok().body(response);
     }
 
     @GetMapping("/chargerLat")
-    public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLat(@RequestParam(required = false) String latitude) {
+    public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLat(@RequestParam(required = false) float latitude) {
 
         Iterable<ChargerModel> response = service.retrieveChargerLat(latitude);
         return ResponseEntity.ok().body(response);
     }
 
     @GetMapping("/charger/{id}/")
-    public ResponseEntity<ChargerModel> retrieveCharger(@PathVariable String id) {
+    public ResponseEntity<ChargerModel> retrieveCharger(@PathVariable Long id) {
         ChargerModel response = service.retrieveCharger(id);
         return ResponseEntity.ok().body(response);
     }
 
     @PutMapping("/chargers/{id}/")
-    public ResponseEntity<ChargerModel> updateCharger(@PathVariable String id, @RequestBody ChargerModel charger) {
+    public ResponseEntity<ChargerModel> updateCharger(@PathVariable Long id, @RequestBody ChargerModel charger) {
         ChargerModel newCharger = service.updateCharger(id, charger);
         if (newCharger == null) {
             return ResponseEntity.badRequest().body(null);
@@ -71,7 +71,7 @@ public class ChargerController {
     }
 
     @DeleteMapping("/chargers/{id}")
-    public ResponseEntity<ChargerModel> deleteCharger(@PathVariable String id) {
+    public ResponseEntity<ChargerModel> deleteCharger(@PathVariable Long id) {
         service.deleteCharger(id);
         return ResponseEntity.noContent().build();
     }
