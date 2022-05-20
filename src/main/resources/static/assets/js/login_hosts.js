@@ -20,13 +20,10 @@ submit_button.addEventListener("click",
 
             if (request1.ok) {
                 data = await request1.json();
-                document.getElementById("result").innerHTML = "";
 
                 console.log(data);
-            }
 
-            if (request1.ok) {
-                if (data.email == email && data.password == password) {
+                if (data[0].email == email && data[0].password == password) {
                     let url = "http://localhost:" + Integer.toString(port) + "/hosts.html";
                     window.location = url;
 
