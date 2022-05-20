@@ -27,6 +27,7 @@ if (request.ok) {
             const marcador = L.marker([latitude, longitude], { icon: chargerIcon }).addTo(map);
             map.setView([latitude, longitude], map.getZoom());
             marcador.setLatLng([latitude, longitude]);
+            marcador.bindPopup("<button class="btn btn-dark btn-lg btn-block" id= "reservation_button" type="button">Reservar</button>").openPopup();
         }
 
         getCharger();
