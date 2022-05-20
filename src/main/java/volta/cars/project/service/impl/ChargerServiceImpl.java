@@ -69,13 +69,11 @@ public class ChargerServiceImpl implements ChargerService {
     @Override
     public void createCharger(ChargerModel newCharger) {
 
-        int userId = newCharger.getUserId();
-        String chargerName = newCharger.getChargerName();
+        Long userId = newCharger.getUserId();
         float latitude = newCharger.getLatitude();
         float longitude = newCharger.getLongitude();
-        float wattage = newCharger.getWattage();
+        String chargerType = newCharger.getChargerType();
 
-        repository.addCharger(userId, chargerName, latitude, longitude, wattage);
-
+        repository.addCharger(userId, latitude, longitude, chargerType);
     }
 }
