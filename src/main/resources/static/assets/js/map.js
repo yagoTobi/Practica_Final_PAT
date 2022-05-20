@@ -32,9 +32,6 @@ async function getChargers() {
                 marcador.bindPopup('<h3>Tipo de cargador:</h3><h4>' + chargerType + '</h4><div class="row d-flex justify-content-center"><button class="btn btn-dark btn-lg btn-block" id= "reservation_button' + i + '" type="button">Reservar</button></div>').openPopup();
             }
             getCharger();
-        }
-
-        for (let i = 1; i-1 < data.length; i++) {
             var reservation_button=document.getElementById("reservation_button" + i);
             console.log(reservation_button);
             reservation_button.addEventListener("click",
@@ -43,7 +40,7 @@ async function getChargers() {
                     const now = new Date();
                     const reservationHour = now.getHours() + ':' + now.getMinutes();
                     const reservationDate = now.getDate();
-                    let request2 = await fetch("/api/v1/charger/" + i, {
+                    let request2 = await fetch("/api/v1/charger/"+i, {
                         method: "GET",
                     }).catch(console.error);
 
