@@ -2,7 +2,6 @@ let submit_button = document.getElementById("submit_button");
 
 submit_button.addEventListener("click",
     (postNewUser = async () => {
-        let rating = 0;
         let e_mail = document.getElementById("e_mail").value;
         let password = document.getElementById("password").value;
         let hourly_rate = document.getElementById("hourly_rate").value;
@@ -47,9 +46,7 @@ submit_button.addEventListener("click",
                     },
                     body: JSON.stringify({
                         user_id: data.userId,
-                        host_id: host_id,
                         hourly_rate: hourly_rate,
-                        rating: rating,
                         number_hosted: number_hosted,
                         identification: identification
                     }), dataType: "json"
