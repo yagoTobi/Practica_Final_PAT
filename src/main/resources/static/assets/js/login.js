@@ -8,28 +8,39 @@ submit_button.addEventListener("click",
         if (email == null || email == '') {
             alert("Porfavor inserte su correo");
         } else if (password == null || password == '') {
-            alert("Porfavor inserte una constraseña");
+            alert("Porfavor inserte una contraseña");
         } else {
 
             //Nos metemos en el user-controller para observar hasta donde hacemos el Get 
             let link = "/api/v1/userMembers/" + email;
             console.log(link);
 
-            let request1 = await fetch(link, {
+            let request = await fetch(link, {
                 method: "GET",
             }).catch(console.error);
 
-            if (request1.ok) {
-                data = await request1.json();
-                document.getElementById("result").innerHTML = "";
-
+            if (request.ok) {
+                data = await request.json();
                 console.log(data);
             }
 
-            if (request1.ok) {
-                if (table.email == email && table.password == password) {
-                    let url = "http://localhost:" + Integer.toString(port) + "/users.html";
-                    window.location = url;
+            if (request.ok) {
+
+                //console.log("Parametros que enviamos");
+                //console.log(email);
+                //console.log(password);
+
+                //console.log("Parametros de comparacion");
+                //console.log(data.email);
+                //console.log(data.password);
+
+
+                if (data[0].email == email && data[0].password == password) {
+                    console.log("User Exists... Redirecting")
+                    let url = "/users.html";
+                    window.location.href = url;
+                }else{
+                    console.log("Fail, somethings up!");
                 }
             }
         }
