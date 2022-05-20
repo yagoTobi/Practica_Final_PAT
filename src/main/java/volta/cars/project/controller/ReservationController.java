@@ -25,13 +25,13 @@ public class ReservationController {
     };
 
     @PostMapping("/reservations")
-    public ResponseEntity<String> createReservationMember(
+    public ResponseEntity<String> createReservation(
             @RequestBody ReservationModel model,
             BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<String>("{\"result\" : \"KO\"}", HttpStatus.BAD_REQUEST);
         } else {
-            service.createReservationMember(model);
+            service.createReservation(model);
             return new ResponseEntity<String>("{\"result\" : \"OK\"}", HttpStatus.OK);
         }
     }
