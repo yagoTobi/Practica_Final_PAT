@@ -20,6 +20,7 @@ import volta.cars.project.service.ChargerService;
 @RestController
 @RequestMapping("/api/v1")
 public class ChargerController {
+
     @Autowired
     private ChargerService service;
 
