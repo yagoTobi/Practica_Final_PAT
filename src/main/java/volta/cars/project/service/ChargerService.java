@@ -18,10 +18,5 @@ public interface ChargerService {
 
     void createCharger(ChargerModel newCharger);
 
-    //Get 
-    Iterable<ChargerModel> getChargerByUserId(Long userId); 
+    ChargerModel getChargerByChargerId(Long chargerId); 
 }
-
-
-/*@Query("SELECT * FROM CHARGERS WHERE CHARGER.USER_ID= :user_id")
-    public Iterable<ChargerModel> retrieveChargerByUser(Long userId);*/

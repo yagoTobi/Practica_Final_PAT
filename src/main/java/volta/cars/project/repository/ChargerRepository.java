@@ -8,19 +8,18 @@ import volta.cars.project.model.ChargerModel;
 
 public interface ChargerRepository extends CrudRepository<ChargerModel, Long> {
 
-    //Como hacer un Post 
     @Modifying
-    @Query("SELECT * FROM CHARGERS WHERE CHARGER.LONGITUDE= :longitude")
+    @Query("SELECT * FROM CHARGERS WHERE CHARGERS.LONGITUDE= :longitude")
     public Iterable<ChargerModel> retrieveChargersByLongitude(float longitude);
     
-    @Query("SELECT * FROM CHARGERS WHERE CHARGER.LONGITUDE= :longitude")
+    @Query("SELECT * FROM CHARGERS WHERE CHARGERS.LONGITUDE= :longitude")
     public Iterable<ChargerModel> retrieveChargersByLatitude(float latitude);
     
-    @Query("SELECT * FROM CHARGERS WHERE CHARGER.CHARGER_ID= :id")
+    @Query("SELECT * FROM CHARGERS WHERE CHARGERS.CHARGER_ID= :chargerId")
     public Iterable<ChargerModel> retrieveCharger(Long chargerId);
 
-    @Query("SELECT * FROM CHARGERS WHERE CHARGER.USER_ID= :user_id")
-    public Iterable<ChargerModel> retrieveChargerByUser(Long userId);
+    @Query("SELECT * FROM CHARGERS WHERE CHARGERS.CHARGER_ID= :chargerId")
+    public ChargerModel retrieveChargerById(Long chargerId);
     
     @Query("INSERT INTO CHARGERS (USER_ID, LATITUDE, LONGITUDE, CHARGER_TYPE) VALUES (:userId,:latitude,:longitude,:chargerType)")
     public void addCharger(Long userId, float latitude, float longitude, String chargerType);

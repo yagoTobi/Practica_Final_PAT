@@ -73,8 +73,8 @@ public class ChargerServiceImpl implements ChargerService {
     }
 
     @Override
-    public Iterable<ChargerModel> getChargerByUserId(Long userId) {
-        return repository.retrieveChargerByUser(userId);
+    public ChargerModel getChargerByChargerId(Long chargerId) {
+        return repository.retrieveChargerById(chargerId);
     }
 
 

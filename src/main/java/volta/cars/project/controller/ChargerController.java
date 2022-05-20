@@ -55,9 +55,9 @@ public class ChargerController {
         return ResponseEntity.ok().body(response);
     }
 
-    @GetMapping("/chargers/{id}/")
-    public ResponseEntity<Iterable<ChargerModel>> retrieveCharger(@PathVariable Long id) {
-        Iterable<ChargerModel> response = service.getChargerByUserId(id);
+    @GetMapping("/charger/{id}/")
+    public ResponseEntity<ChargerModel> retrieveCharger(@PathVariable Long id) {
+        ChargerModel response = service.getChargerByChargerId(id);
         return ResponseEntity.ok().body(response);
     }
 
