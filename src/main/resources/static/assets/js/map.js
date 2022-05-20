@@ -1,4 +1,4 @@
-const map = L.map('map').setView([0, 0], 6);
+const map = L.map('map').setView([0, 0], 5);
 
 const chargerIcon = L.icon({
     iconUrl: 'assets/img/charger.png',
@@ -29,7 +29,7 @@ async function getChargers() {
                 const marcador = L.marker([latitude, longitude], { icon: chargerIcon }).addTo(map);
                 map.setView([latitude, longitude], map.getZoom());
                 marcador.setLatLng([latitude, longitude]);
-                marcador.bindPopup('<button class="btn btn-dark btn-lg btn-block" id= "reservation_button" type="button">Reservar</button>').openPopup();
+                marcador.bindPopup('<h4>Tipo de cargador:</h4><button class="btn btn-dark btn-lg btn-block" id= "reservation_button" type="button">Reservar</button>').openPopup();
             }
 
             getCharger();
