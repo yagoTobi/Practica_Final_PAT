@@ -10,7 +10,7 @@ submit_button.addEventListener("click",
         } else if (password == null || password == '') {
             alert("Porfavor inserte una constraseña");
         } else {
-            let link = "/api/v1/userMembers/" + e_mail;
+            let link = "/api/v1/userMembers/" + email;
             console.log(link);
 
             let request1 = await fetch(link, {
@@ -44,7 +44,7 @@ submit_button.addEventListener("click",
             }
 
             if (request1.ok) {
-                if (data.email == email && data.password == password) {
+                if (table.email == email && table.password == password) {
                     let url = "http://localhost:" + Integer.toString(port) + "/users.html";
                     window.location = url;
                 }
