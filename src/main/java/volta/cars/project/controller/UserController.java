@@ -19,6 +19,9 @@ import volta.cars.project.service.UserService;
 @RestController
 @RequestMapping("/api/v1")
 public class UserController {
+
+    
+
     @Autowired
     private UserService service;
 
@@ -39,8 +42,10 @@ public class UserController {
         }
     }
 
+    //TODO Verificar el error del correo 
     @GetMapping("/userMembers/{email}")
-    public Optional<UserModel> getUser(@PathVariable("email") String email) {
+    public Iterable<UserModel> getUser(@PathVariable("email") String email) {
         return service.getUserByEmail(email);
     }
+
 }

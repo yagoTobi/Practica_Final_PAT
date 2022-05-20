@@ -1,7 +1,7 @@
 let submit_button = document.getElementById("submit_button");
 
 submit_button.addEventListener("click",
-    (postNewUser = async () => {
+    (logInStandard = async () => {
         let email = document.getElementById("e_mail").value;
         let password = document.getElementById("password").value;
 
@@ -10,6 +10,8 @@ submit_button.addEventListener("click",
         } else if (password == null || password == '') {
             alert("Porfavor inserte una constraseña");
         } else {
+
+            //Nos metemos en el user-controller para observar hasta donde hacemos el Get 
             let link = "/api/v1/userMembers/" + email;
             console.log(link);
 

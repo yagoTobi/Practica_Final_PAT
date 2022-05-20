@@ -34,8 +34,10 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Optional<UserModel> getUserByEmail(String email) {
-        return repository.findById(email);
+    public Iterable<UserModel> getUserByEmail(String mail) {
+        return repository.getUserByEmail(mail);
     }
+
+
     
 }

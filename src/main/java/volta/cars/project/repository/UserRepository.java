@@ -13,4 +13,9 @@ public interface UserRepository extends CrudRepository<UserModel, String> {
     @Query("INSERT INTO USERS (USER_NAME, SURNAME, E_MAIL, PASSWORD, DOB) VALUES (:user_name, :surname, :email,:password, :dob)")
     public void addMember(String user_name, String surname, String email, String password, String dob);
 
+
+    @Modifying
+    @Query("SELECT * FROM USERS WHERE USERS.E_MAIL = ':email' ")
+    public Iterable<UserModel> getUserByEmail(String email);
+
 }
