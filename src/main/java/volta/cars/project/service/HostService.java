@@ -7,6 +7,4 @@ public interface HostService {
 
     void addHost(HostModel newHost);
 
-    //Get by ID
-    HostModel getHostById(Long userId);
 }

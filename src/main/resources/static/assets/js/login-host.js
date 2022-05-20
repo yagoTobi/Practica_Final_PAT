@@ -1,7 +1,7 @@
 let submit_button = document.getElementById("submit_button");
 
 submit_button.addEventListener("click",
-    (postNewUser = async () => {
+    (postNewHost = async () => {
         let email = document.getElementById("e_mail").value;
         let password = document.getElementById("password").value;
 
@@ -24,10 +24,8 @@ submit_button.addEventListener("click",
                 console.log(data);
 
                 if (data[0].email == email && data[0].password == password) {
-                    let url = "http://localhost:" + Integer.toString(port) + "/hosts.html";
-                    window.location = url;
-
-                    /* */
+                    let url = "/hosts.html";
+                    window.location.href = url;
                 }
             }
         }

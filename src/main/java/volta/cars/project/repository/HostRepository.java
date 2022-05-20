@@ -12,8 +12,4 @@ public interface HostRepository extends CrudRepository<HostModel, String> {
     @Modifying
     @Query("INSERT INTO HOSTS (USER_ID, HOURLY_RATE, NUMBER_HOSTED, IDENTIFICATION) VALUES (:userId, :hourlyRate, :numberHosted, :identification)")
     public void addHost(Long userId, float hourlyRate, Long numberHosted, String identification);
-
-
-    //@Query("SELECT * FROM HOSTS WHERE HOSTS.USER_ID = :userId")
- 
 }
