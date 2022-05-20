@@ -31,7 +31,7 @@ public class HostController {
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<String>("{\"result\" : \"KO\"}", HttpStatus.BAD_REQUEST);
         } else {
-            service.createHostMember(model);
+            service.addHost(model);
             return new ResponseEntity<String>("{\"result\" : \"OK\"}", HttpStatus.OK);
         }
     }

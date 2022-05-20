@@ -12,26 +12,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table("HOSTS")
 public class HostModel {
-    private @Column("USER_ID") int userId;
-    private @Column("HOST_ID") int hostId;
+    private @Column("USER_ID") Long userId;
+    private @Column("HOST_ID") Long hostId;
     private @Column("HOURLY_RATE") float hourlyRate;
-    private @Column("RATING") int rating;
-    private @Column("NUMBER_HOSTED") int numberHosted;
+    private @Column("RATING") Long rating;
+    private @Column("NUMBER_HOSTED") Long numberHosted;
     private @Column("IDENTIFICATION") String identification;
 
-    public int getUserId() {
+    public Long getUserId() {
         return this.userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public int getHostId() {
+    public Long getHostId() {
         return this.hostId;
     }
 
-    public void setHostId(int hostId) {
+    public void setHostId(Long hostId) {
         this.hostId = hostId;
     }
 
@@ -43,19 +43,19 @@ public class HostModel {
         this.hourlyRate = hourlyRate;
     }
 
-    public int getRating() {
+    public Long getRating() {
         return this.rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Long rating) {
         this.rating = rating;
     }
 
-    public int getNumberHosted() {
+    public Long getNumberHosted() {
         return this.numberHosted;
     }
 
-    public void setNumberHosted(int numberHosted) {
+    public void setNumberHosted(Long numberHosted) {
         this.numberHosted = numberHosted;
     }
 

@@ -19,16 +19,13 @@ public class HostServiceImpl implements HostService{
     }
 
     @Override
-    public void createHostMember(HostModel newHost) {
+    public void addHost(HostModel newHost) {
+        Long userId = newHost.getUserId();
+        float hourlyRate = newHost.getHourlyRate();
+        Long numberHosted = newHost.getNumberHosted();
+        String identification = newHost.getIdentification();
 
-        int userId=newHost.getUserId();
-        float hourlyRate=newHost.getHourlyRate();
-        int rating=newHost.getRating();
-        int numberHosted=newHost.getNumberHosted();
-        String identification=newHost.getIdentification();
-
-        repository.addHost( userId, hourlyRate, rating, numberHosted, identification);
-
+        repository.addHost(userId, hourlyRate, numberHosted, identification);
+        
     }
-    
 }
