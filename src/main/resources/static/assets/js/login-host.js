@@ -21,7 +21,10 @@ submit_button.addEventListener("click",
             if (request1.ok) {
                 data = await request1.json();
 
-                console.log(data);
+                console.log(data[0].email);
+                console.log(email);
+                console.log(data[0].password);
+                console.log(password);
 
                 if (data[0].email == email && data[0].password == password) {
                     let url = "/hosts.html";
