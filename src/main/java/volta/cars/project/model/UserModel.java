@@ -10,17 +10,17 @@ import lombok.Data;
 @Table("USERS")
 public class UserModel {
 
-    private @Column("USER_ID") int userId;
+    private @Column("USER_ID") Long userId;
     private @Column("USER_NAME") String userName;
     private @Column("SURNAME") String surname;
     private @Column("E_MAIL") String email;
     private @Column("PASSWORD") String password;
     private @Column("DOB") String dob;
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
     

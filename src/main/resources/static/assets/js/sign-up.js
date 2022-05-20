@@ -2,14 +2,14 @@ let submit_button = document.getElementById("submit_button");
 
 submit_button.addEventListener("click", 
     (postNewUser = async () => {
-        let user_name = document.getElementById("user_name").value;
+        let userName = document.getElementById("userName").value;
         let surname = document.getElementById("surname").value;
         let email = document.getElementById("e_mail").value;
         let password = document.getElementById("password").value;
         let password_confirmation = document.getElementById("password_repeat").value;
         let dob = document.getElementById("dob").value.toString();
 
-        if(user_name == null || user_name == '')
+        if(userName == null || userName == '')
         {
             alert("Porfavor inserte un nombre valido");
         }else if(surname == null || surname == '')
@@ -37,13 +37,15 @@ submit_button.addEventListener("click",
                     "Content-Type":"application/json"
                 }, 
                 body: JSON.stringify({
-                    user_name: user_name, 
+                    userName: userName, 
                     surname: surname, 
                     email: email,
                     password: password, 
                     dob:dob
                 }), dataType:"json"
             })
+
+            console.log(userName);
 
             if(request.ok)
             {
