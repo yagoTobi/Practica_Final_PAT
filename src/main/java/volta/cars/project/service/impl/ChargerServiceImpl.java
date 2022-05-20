@@ -8,14 +8,13 @@ import volta.cars.project.repository.ChargerRepository;
 import volta.cars.project.service.ChargerService;
 
 @Service
-public class ChargerServiceImpl implements ChargerService{
-    
-    @Autowired 
-    private ChargerRepository repository; 
+public class ChargerServiceImpl implements ChargerService {
 
-    @Override 
-    public Iterable<ChargerModel> retrieveAll()
-    {
+    @Autowired
+    private ChargerRepository repository;
+
+    @Override
+    public Iterable<ChargerModel> retrieveAll() {
         return repository.findAll();
     }
 
@@ -39,12 +38,11 @@ public class ChargerServiceImpl implements ChargerService{
         }
     }
 
-
     @Override
     public ChargerModel retrieveCharger(String id) {
         ChargerModel response = null;
         if (repository.existsById(id)) {
-            Iterable<ChargerModel> chargers =repository.retrieveCharger(id);
+            Iterable<ChargerModel> chargers = repository.retrieveCharger(id);
             for (ChargerModel charger : chargers) {
                 response = charger;
             }
@@ -70,12 +68,13 @@ public class ChargerServiceImpl implements ChargerService{
     @Override
     public void createCharger(ChargerModel newCharger) {
 
-        int userId=newCharger.getUserId();
-        String chargerName=newCharger.getChargerName();
-        float latitude=newCharger.getLatitude();
-        float longitude=newCharger.getLongitude();
-        float wattage=newCharger.getWattage();
+        int userId = newCharger.getUserId();
+        String chargerName = newCharger.getChargerName();
+        float latitude = newCharger.getLatitude();
+        float longitude = newCharger.getLongitude();
+        float wattage = newCharger.getWattage();
 
-        repository.addCharger( userId, hourlyRate, rating, numberHosted, identification);
+        repository.createCharger(userId, chargerName, latitude, longitude, wattage);
 
     }
+}

@@ -9,4 +9,5 @@ public interface ChargerService {
     ChargerModel retrieveCharger(String id);
     ChargerModel updateCharger(String id, ChargerModel charger);
     void deleteCharger(String id);
+    void createCharger(ChargerModel newCharger);
 }
