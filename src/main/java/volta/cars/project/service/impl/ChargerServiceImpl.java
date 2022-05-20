@@ -55,6 +55,9 @@ public class ChargerServiceImpl implements ChargerService {
         return response;
     }
 
+
+    
+
     @Override
     public ChargerModel updateCharger(Long id, ChargerModel charger) {
         if (repository.existsById(id)) {
@@ -69,5 +72,11 @@ public class ChargerServiceImpl implements ChargerService {
         repository.deleteById(id);
     }
 
+    @Override
+    public Iterable<ChargerModel> getChargerByUserId(Long userId) {
+        return repository.retrieveChargerByUser(userId);
+    }
+
 
 }
+

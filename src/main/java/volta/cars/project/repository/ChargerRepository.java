@@ -18,6 +18,9 @@ public interface ChargerRepository extends CrudRepository<ChargerModel, Long> {
     
     @Query("SELECT * FROM CHARGERS WHERE CHARGER.CHARGER_ID= :id")
     public Iterable<ChargerModel> retrieveCharger(Long chargerId);
+
+    @Query("SELECT * FROM CHARGERS WHERE CHARGER.USER_ID= :user_id")
+    public Iterable<ChargerModel> retrieveChargerByUser(Long userId);
     
     @Query("INSERT INTO CHARGERS (USER_ID, LATITUDE, LONGITUDE, CHARGER_TYPE) VALUES (:userId,:latitude,:longitude,:chargerType)")
     public void addCharger(Long userId, float latitude, float longitude, String chargerType);

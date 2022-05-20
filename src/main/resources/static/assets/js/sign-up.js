@@ -49,8 +49,10 @@ submit_button.addEventListener("click",
 
             if(request.ok)
             {
+                alert("Usuario creado con exito!");
                 console.log("Success!");
                 console.log(await request.json());
+                window.location.href = "/login.html";
             }
         }
 

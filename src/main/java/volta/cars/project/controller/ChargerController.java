@@ -41,23 +41,23 @@ public class ChargerController {
         }
     }
 
-    @GetMapping("/chargerLon")
+    @GetMapping("/chargersLon")
     public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLon(@RequestParam(required = false) float longitude) {
 
         Iterable<ChargerModel> response = service.retrieveChargerLong(longitude);
         return ResponseEntity.ok().body(response);
     }
 
-    @GetMapping("/chargerLat")
+    @GetMapping("/chargersLat")
     public ResponseEntity<Iterable<ChargerModel>> retrieveChargerLat(@RequestParam(required = false) float latitude) {
 
         Iterable<ChargerModel> response = service.retrieveChargerLat(latitude);
         return ResponseEntity.ok().body(response);
     }
 
-    @GetMapping("/charger/{id}/")
-    public ResponseEntity<ChargerModel> retrieveCharger(@PathVariable Long id) {
-        ChargerModel response = service.retrieveCharger(id);
+    @GetMapping("/chargers/{id}/")
+    public ResponseEntity<Iterable<ChargerModel>> retrieveCharger(@PathVariable Long id) {
+        Iterable<ChargerModel> response = service.getChargerByUserId(id);
         return ResponseEntity.ok().body(response);
     }
 
