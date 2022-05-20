@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import volta.cars.project.model.ChargerModel;
 
-public interface ChargerRepository extends CrudRepository<ChargerModel, String> {
+public interface ChargerRepository extends CrudRepository<ChargerModel, Long> {
 
     //Como hacer un Post 
     @Modifying

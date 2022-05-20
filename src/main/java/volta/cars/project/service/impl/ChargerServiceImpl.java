@@ -46,8 +46,7 @@ public class ChargerServiceImpl implements ChargerService {
     public ChargerModel retrieveCharger(Long id) {
         ChargerModel response = null;
         if (repository.existsById(id)) {
-            int idInt = Integer.parseInt(id);
-            Iterable<ChargerModel> chargers = repository.retrieveCharger(idInt);
+            Iterable<ChargerModel> chargers = repository.retrieveCharger(id);
             for (ChargerModel charger : chargers) {
                 response = charger;
             }
@@ -57,7 +56,7 @@ public class ChargerServiceImpl implements ChargerService {
     }
 
     @Override
-    public ChargerModel updateCharger(String id, ChargerModel charger) {
+    public ChargerModel updateCharger(Long id, ChargerModel charger) {
         if (repository.existsById(id)) {
             return repository.save(charger);
         } else {
@@ -66,7 +65,7 @@ public class ChargerServiceImpl implements ChargerService {
     }
 
     @Override
-    public void deleteCharger(String id) {
+    public void deleteCharger(Long id) {
         repository.deleteById(id);
     }
 
