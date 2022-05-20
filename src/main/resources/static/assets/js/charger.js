@@ -20,19 +20,19 @@ submit_button.addEventListener("click",
             let user_id = this.href.substring(this.href.lastIndexOf('/') + 1);
 
             console.log(user_id);
-            let request2 = await fetch("/api/v1/chargers/{id}/", {
+            let request2 = await fetch("/api/v1/chargers/", {
                 method: 'POST',
                 credentials: "same-origin",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    user_id: data.userId,
-                    host_id: host_id,
-                    hourly_rate: hourly_rate,
-                    rating: rating,
-                    number_hosted: number_hosted,
-                    identification: identification
+                    user_id: user_id,
+                    charger_id: charger_id,
+                    charger_name: charger_name,
+                    latitude: latitude,
+                    longitude: longitude,
+                    wattage: wattage
                 }), dataType: "json"
             })
 
