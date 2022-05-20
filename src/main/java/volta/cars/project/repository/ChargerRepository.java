@@ -16,4 +16,6 @@ public interface ChargerRepository extends CrudRepository<ChargerModel, String> 
     public Iterable<ChargerModel> retrieveChargersByLatitude(float latitude);
     @Query("SELECT * FROM CHARGER WHERE CHARGER.ID= :id")
     public Iterable<ChargerModel> retrieveCharger(String chargerId);
+    @Query("INSERT INTO USERS (USERID, CHARGERNAME, LATITUDE, LONGITUDE, WATTAGE) VALUES (:userId,:chargerName,:latitude,:longitude,:wattage)")
+    public void createUser(int userId, String chargerName, float latitude, float longitude, float wattage);
 }
