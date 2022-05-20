@@ -13,12 +13,13 @@ import lombok.NoArgsConstructor;
 @Table("RESERVATIONS")
 public class ReservationModel {
     private @Column("USER_ID") int userId;
-    private @Column("RESERVATION_ID") String reservationId;
-    private @Column("HOST_ID") String hostId;
+    private @Column("RESERVATION_ID") int reservationId;
+    private @Column("HOST_ID") int hostId;
     private @Column("PRICE") float price;
-    private @Column("CHARGER_LOCATION") String location;
+    private @Column("LATITUDE") float latitude;
+    private @Column("LONGITUDE") float longitude;
     private @Column("RESERVATION_DATE") String reservationDate;
-    private @Column("RESERVATION_HOUR") String reservationHour;
+    private @Column("RESERVATION_HOUR") String reservationHour;  
 
     public int getUserId() {
         return this.userId;
@@ -28,19 +29,19 @@ public class ReservationModel {
         this.userId = userId;
     }
 
-    public String getReservationId() {
+    public int getReservationId() {
         return this.reservationId;
     }
 
-    public void setReservationId(String reservationId) {
+    public void setReservationId(int reservationId) {
         this.reservationId = reservationId;
     }
 
-    public String getHostId() {
+    public int getHostId() {
         return this.hostId;
     }
 
-    public void setHostId(String hostId) {
+    public void setHostId(int hostId) {
         this.hostId = hostId;
     }
 
@@ -52,12 +53,20 @@ public class ReservationModel {
         this.price = price;
     }
 
-    public String getLocation() {
-        return this.location;
+    public float getLatitude() {
+        return this.latitude;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    public float getLongitude() {
+        return this.longitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
 
     public String getReservationDate() {
