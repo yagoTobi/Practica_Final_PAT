@@ -12,58 +12,43 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table("CHARGERS")
 public class ChargerModel {
-    private @Column("USER_ID") int userId;
-    private @Column("CHARGER_ID") int chargerId;
-    private @Column("CHARGER_NAME") String chargerName;
+    private @Column("USER_ID") Long userId;
+    private @Column("CHARGER_ID") Long chargerId;
+    private @Column("CHARGER_TYPE") String chargerType;
     private @Column("LATITUDE") float latitude;
     private @Column("LONGITUDE") float longitude;
-    private @Column("WATTAGE") float wattage;
 
-    public int getChargerId() {
-        return this.chargerId;
+    
+    public Long getUserId() {
+        return userId;
     }
-
-    public void setChargerId(int chargerId) {
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+    public Long getChargerId() {
+        return chargerId;
+    }
+    public void setChargerId(Long chargerId) {
         this.chargerId = chargerId;
     }
-
-    public String getChargerName() {
-        return this.chargerName;
+    public String getChargerType() {
+        return chargerType;
     }
-
-    public void setChargerName(String chargerName) {
-        this.chargerName = chargerName;
+    public void setChargerType(String chargerType) {
+        this.chargerType = chargerType;
     }
-
     public float getLatitude() {
-        return this.latitude;
+        return latitude;
     }
-
     public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
-
     public float getLongitude() {
-        return this.longitude;
+        return longitude;
     }
-
     public void setLongitude(float longitude) {
         this.longitude = longitude;
     }
 
-    public float getWattage() {
-        return this.wattage;
-    }
-
-    public void setWattage(float wattage) {
-        this.wattage = wattage;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+   
 }
